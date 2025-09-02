@@ -1,14 +1,18 @@
 from mininet.net import Mininet
-from mininet.node import Controller, OVSSwitch
+from mininet.node import OVSController, OVSSwitch
 from mininet.cli import CLI
 from mininet.log import setLogLevel, info
+from mininet.clean import cleanup
+
+# clean up the previous session
+cleanup()
 
 def create_network():
     # Set log level to info for output
     setLogLevel('info')
 
     # Create a Mininet object
-    net = Mininet(controller=Controller, switch=OVSSwitch)
+    net = Mininet(controller=OVSController, switch=OVSSwitch)
 
     # Add controller
     #info("*** Adding controller\n")

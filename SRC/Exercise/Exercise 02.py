@@ -2,13 +2,17 @@ from mininet.net import Mininet
 from mininet.node import Controller, OVSKernelSwitch, Host
 from mininet.cli import CLI
 from mininet.log import setLogLevel
+from mininet.clean import cleanup
+
+cleanup()
+
 
 def create_network():
     # Create a Mininet object
     net = Mininet(controller=Controller, switch=OVSKernelSwitch)
 
     # Add controller
-    c0 = net.addController('c0')
+    #c0 = net.addController('c0')
 
     # Add routers (using switches with IP forwarding)
     r1 = net.addSwitch('r1')
